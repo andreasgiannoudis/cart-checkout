@@ -12,7 +12,7 @@
             <?php endif; ?>
         <header>
             <div class="column-50">
-               
+               <h1>HEJ</h1>
             </div>
             <div class="column-50">
                 <?php
