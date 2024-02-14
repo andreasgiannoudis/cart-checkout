@@ -1,5 +1,0 @@
-<?php
-
-//helllo
-
-echo"hej";
