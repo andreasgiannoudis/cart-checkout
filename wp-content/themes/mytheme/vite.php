@@ -197,13 +197,13 @@ function vite_enqueue()
      Vite::enqueue_module();
 
      // register theme-style-css
-     $filename = Vite::asset('resources/styles/app.scss');
+     $filename = Vite::asset('src/styles/app.scss');
 
      // enqueue theme-style-css into our head
      wp_enqueue_style('theme-styles', $filename, [], null, 'screen');
 
      // register theme-script-js
-     $filename = Vite::asset('resources/scripts/app.js');
+     $filename = Vite::asset('src/scripts/app.js');
 
      // enqueue theme-script-js into our head (change false to true for footer)
      wp_enqueue_script('theme-scripts', $filename, [], null, false);
