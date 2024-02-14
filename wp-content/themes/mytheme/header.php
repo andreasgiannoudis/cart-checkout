@@ -27,15 +27,6 @@
                 ?>
             </div>
             <div class="column-50 login-shopping-bag">
-                <?php
-
-                $menu_header = array(
-                    'theme_location' => 'huvudmeny2',
-                    'menu_id' => 'header-menu',
-                    'container' => 'nav',
-                    'container_class' => 'menu'
-                );
-                wp_nav_menu($menu_header);
-                ?>
+                
             </div>
         </header>
