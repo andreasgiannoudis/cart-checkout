@@ -26,7 +26,18 @@
                 wp_nav_menu($menu_header);
                 ?>
             </div>
-            <div class="column-50 login-shopping-bag">
+            <div class="column-50 menu-icons">
+
+            <?php
+
+                $menu_header = array(
+                    'theme_location' => 'menyikoner',
+                    'menu_id' => 'header-menu',
+                    'container' => 'nav',
+                    'container_class' => 'menu menu-nav'
+                );
+                wp_nav_menu($menu_header);
+                ?>
                 
             </div>
         </header>

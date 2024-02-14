@@ -23,6 +23,7 @@ add_action('wp_enqueue_scripts', 'my_theme_enqueue');
 function my_theme_init(){
     $menus = array(
         'huvudmeny' => 'huvudmeny',
+        'menyikoner'=>'menyikoner',
         'footer_meny' => 'footer_meny',
      
     );
