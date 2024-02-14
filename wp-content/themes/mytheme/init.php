@@ -6,7 +6,7 @@ require_once("shortcodes.php");
 function my_theme_enqueue() {
     $theme_directory = get_template_directory_uri();
 
-    wp_enqueue_script('app', $theme_directory . '/resources/scripts/app.js', array(), null, true);
+    wp_enqueue_script('app', $theme_directory . '/src/scripts/app.js', array(), null, true);
 
     $data = array(
         "name" => get_option("blogname"),
