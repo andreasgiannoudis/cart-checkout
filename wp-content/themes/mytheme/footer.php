@@ -34,7 +34,7 @@
     <div class="copyright"><?= date('Y') . " " .   get_bloginfo('name')  ?>. All rights reserved.</div>
 
 </footer>
-
+<?php wp_footer(); ?>
 </body>
 
 </html>
