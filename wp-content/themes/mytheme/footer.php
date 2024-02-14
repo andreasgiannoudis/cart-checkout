@@ -31,7 +31,7 @@
         ?>
 
     </div>
-    <div class="copyright">© Copyright <?= get_bloginfo('name') . " " .  date('Y'); ?></div>
+    <div class="copyright"><?= date('Y') . " " .   get_bloginfo('name')  ?>. All rights reserved.</div>
 
 </footer>
 
