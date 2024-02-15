@@ -1,0 +1,71 @@
+.custom-section {
+    position: relative;
+    height: 330px;
+
+    .photo-overlay {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img.custom-photo {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            filter: blur(2px);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .logo-custom {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 77px;
+            height: 77px;
+            z-index: 1;
+        }
+
+        .page-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 1; 
+            font-family: $strong-font;
+            font-weight: 500;
+            font-size: 48px;
+            line-height: 72px;
+        }
+
+        .woocommerce-breadcrumb {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            z-index: 1; 
+            font-family: $strong-font;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: $primary-text-color;
+            a{
+                color: $primary-text-color;
+                text-decoration: none;
+            }
+
+            .separator{
+                padding: 10px;
+            }
+        }
+    }
+}
