@@ -24,17 +24,24 @@
     src: url('../fonts/Poppins-Semibold.ttf') format('truetype');
     font-weight: 600;
   }
+
+  @font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+  }
   
   $primary-font: 'Poppins-Regular';
   $strong-font: 'Poppins-Medium';
   $light-font: 'Poppins-Light';
-  $semibold-font: 'Poppins-semibold';
+  $semibold-font: 'Poppins-Semibold';
+  $bold-font: 'Poppins-Bold';
 
 
 //COLORS
 $background-color: #ffffff;
 $primary-text-color: #000000;
-
+$price-color: #B88E2F;
 
 
 

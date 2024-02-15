@@ -1,9 +1,8 @@
 .woocommerce{
    
+    // FORM
     padding: 60px;
     .woocommerce-checkout{
-        
-    
         .checkout-columns {
             display: flex;
             justify-content: space-between;
@@ -22,10 +21,164 @@
                     font-size: 36px;
                     line-height: 54px;
                 }
+
+                .col2-set{
+                    margin-left: -10px;
+                    //col-1 is the form for the addresses and personal information
+                    .col-1{
+                        width: calc(100% - 50px);
+                        .woocommerce-billing-fields{
+                            .woocommerce-billing-fields__field-wrapper{
+                                .form-row{
+                                    margin: 0 6px 6px 6px;
+                                    padding-bottom: 40px;
+                                    abbr.required {
+                                        display: none;
+                                    }
+
+                                    label{
+                                        font-family: $strong-font;
+                                        font-weight: 500;
+                                        font-size: 16px;
+                                        line-height: 24px;
+                                        padding-bottom: 20px;
+                                    }
+
+                                    
+                                    .woocommerce-input-wrapper{
+                                        #billing_first_name.input-text,
+                                        #billing_last_name.input-text {
+                                            width: 211px;
+                                            height: 75px;
+                                            border: 1px solid #9F9F9F;
+                                            border-radius: 10px;
+                                        }
+                                        #billing_last_name.input-text {
+                                            margin-left: -65px;
+                                        }
+
+                                        .input-text,
+                                        .select  {
+                                            width: 453px;
+                                            height: 75px;
+                                            border: 1px solid #9F9F9F;
+                                            border-radius: 10px;
+                                        }
+
+                                        .select{
+                                            background-color: transparent;
+                                            option{
+                                                background-color: transparent;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    //col-2 is the additional information
+                    
+                }
             }
-    
+            
+
+
             .checkout-column-right {
                 margin-left: 20px;
+                .woocommerce-checkout-review-order{
+                    .shop_table{
+                        border-color: transparent;
+                        td{
+                            border-top-color: transparent;
+                        }
+                        thead{
+                            tr{
+                                th{
+                                    font-family: $strong-font;
+                                    font-weight: 500;
+                                    font-size: 24px;
+                                    line-height: 36px;
+                                }
+                            }
+                        }
+
+                        tbody{
+                            
+                            .cart_item{
+                                .product-name{
+                                    font-family: $primary-font;
+                                    color: #9F9F9F;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    .product-quantity{
+                                        color: #000000;
+                                        font-family: $strong-font;
+                                        font-weight: 500;
+                                        font-size: 12px;
+                                        line-height: 18px;
+                                    }
+                                }
+
+                                .product-total{
+                                    font-family: $light-font;
+                                    font-size: 16x;
+                                    line-height: 24px;
+                                }
+                                
+                            }
+                        }
+
+                        tfoot{
+                            th{
+                                border-top-color: transparent;
+                            }
+                            .cart-subtotal{
+                                th{
+                                    font-family: $primary-font;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                    font-weight: 400;
+                                }
+
+                                .woocommerce-Price-amount{
+                                    font-family: $light-font;
+                                    font-weight: 300;
+                                    font-size: 16x;
+                                    line-height: 24px;
+                                }
+                            }
+
+                            .order-total{
+                                th{
+                                    font-family: $primary-font;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                }
+                                td{
+                                    strong{
+                                        .woocommerce-Price-amount{
+                                            color: $price-color;
+                                            font-family: $bold-font;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                            line-height: 36px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+
+
+                    #payment.woocommerce-checkout-payment{
+                        background-color: transparent;
+                    }
+                }
+
             }
             
         }
