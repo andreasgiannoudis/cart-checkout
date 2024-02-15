@@ -53,12 +53,13 @@
             transform: translateX(-50%);
             text-align: center;
             z-index: 1; 
-            font-family: $strong-font;
-            font-weight: 500;
+            font-family: $light-font;
+            font-weight: 300;
             font-size: 16px;
             line-height: 24px;
             color: $primary-text-color;
             a{
+                font-family: $strong-font;
                 color: $primary-text-color;
                 text-decoration: none;
             }

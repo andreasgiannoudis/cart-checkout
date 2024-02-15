@@ -1,0 +1,54 @@
+.woocommerce{
+   
+    padding: 60px;
+    .woocommerce-checkout{
+        
+    
+        .checkout-columns {
+            display: flex;
+            justify-content: space-between;
+            padding-left: 60px;
+    
+            .checkout-column {
+                flex: 0 0 calc(50% - 10px);
+                
+            }
+    
+            .checkout-column-left {
+                margin-right: 20px;
+                .billing-details{
+                    font-family: $semibold-font;
+                    font-weight: 600;
+                    font-size: 36px;
+                    line-height: 54px;
+                }
+            }
+    
+            .checkout-column-right {
+                margin-left: 20px;
+            }
+            
+        }
+    
+    
+        .col2-set{
+            display: flex;
+            flex-direction: column;
+
+             h3 {
+                display: none;
+            }
+        }
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
