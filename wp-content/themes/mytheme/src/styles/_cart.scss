@@ -1,0 +1,210 @@
+.woocommerce{
+    .woocommerce-cart-form{
+        margin-left: 60px;
+        display: flex;
+        
+        .shop_table {
+            width: 80%;
+            border: none;
+            thead{
+                background-color: $cart-second-color;
+                font-family: $primary-font;
+                
+                tr{
+                    
+                    
+                }
+
+            }
+            tbody{
+                
+                .woocommerce-cart-form__cart-item{
+                    
+                    .product-thumbnail{
+                        border: none;
+
+                    }
+                    .product-name{
+                        border: none;
+                        a{
+                            text-decoration: none;
+                            color: $footer-second-text-color;
+                            font-family: $primary-font;
+                        }
+
+                    }
+                    .product-price{
+                        border: none;
+                        span{
+                            color: $footer-second-text-color;
+                            font-family: $primary-font;
+
+                        }
+
+                    }
+                    .product-quantity{
+                        border: none;
+                        .quantity{
+                            padding-left: 5px;
+                            padding-right: 5px;
+                            .input-text{
+                                padding-left: 5px;
+                                padding-right: 5px;
+                                border-radius: 5px;
+                                border: 1px solid $footer-second-text-color;
+
+                            }
+                            input{
+                                padding-left: 5px;
+                                padding-right: 5px;
+                            }
+                        }
+
+                    }
+                    .product-subtotal{
+                        border: none;
+                        .woocommerce-Price-amount{
+                            font-family: $strong-font;
+                            .woocommerce-Price-currencySymbol{
+                                
+                            }
+                        }
+
+                    }
+                    .product-remove{
+                        border: none;
+                        
+                        a{
+                            display: inline-block; 
+                            transition: transform 0.3s ease;
+                            background-color: none ;
+                            background-color: transparent !important;
+
+                            &:hover {
+                                img {
+                                    transform: scale(1.2); 
+                                }
+                            }
+                            
+
+                    
+                            
+                    
+                            
+                            img{
+                                
+                               
+
+                            }
+                        }
+
+                    }
+                }
+                tr{
+                    .actions{
+                        display: none ;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+    .cart-collaterals{
+        width: 30%;
+        // margin-left: 55%;
+        // margin-top: -280px;
+        margin-left: 30px;
+        margin-top: -0px;
+        background-color: $cart-second-color;
+        height: 300px;
+       
+
+        .cart_totals{
+            width: 100%;
+            
+            h2{
+                font-family: $strong-font;
+                display: flex ;
+                justify-content: center ;
+            }
+            
+            
+
+            .shop_table{
+                margin-left: auto;
+                margin-right: auto;
+                
+                
+                
+                tbody{
+                    
+                    
+                    .cart-subtotal{
+                       
+                        th{ 
+
+                        }
+                        td{
+                            .woocommerce-Price-amount{
+                                color: $footer-second-text-color;
+                            }
+                        }
+                       
+
+                    }
+                    .woocommerce-shipping-totals{
+                        display: none ;
+                        
+                    }
+                    .order-total{
+                        strong{
+                            
+                            span{
+                                color: $price-color;
+
+                            }
+                            .includes_tax {
+                               
+                                .woocommerce-Price-amount{
+                                    
+                                   
+                                }
+
+                            }
+                        }
+
+                    }
+
+                }
+            }
+            .wc-proceed-to-checkout{
+                display: flex;
+                justify-content: center;
+                
+
+                a{
+                    background-color: transparent ;
+                    color: black ;
+                    font-family: $primary-font;
+                    border: 1px solid black;
+                    padding: 10 40 10 40px;
+                    border-radius: 10px;
+                    display: inline-block; 
+                    transition: transform 0.3s ease;
+
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+
+
+}
