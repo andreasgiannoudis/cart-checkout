@@ -19,9 +19,21 @@
             tbody{
                 
                 .woocommerce-cart-form__cart-item{
+                    margin-bottom:30px;
+                    
                     
                     .product-thumbnail{
                         border: none;
+                        width: 150px;
+                       
+                        img{
+                            width: 150px;
+                            height: 120px;
+                            background-color: $cart-second-color;
+                            border-radius: 10px;
+
+                        }
+                    
 
                     }
                     .product-name{
