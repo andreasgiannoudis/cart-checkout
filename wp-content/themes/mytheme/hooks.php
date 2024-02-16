@@ -99,3 +99,17 @@ function apply_free_shipping_based_on_order_amount() {
 
     }
 }
+
+
+add_filter('woocommerce_checkout_fields', 'change_order_notes_placeholder');
+
+function change_order_notes_placeholder($fields) {
+    // Check if the order notes field exists
+    if (isset($fields['order']['order_comments'])) {
+        $fields['order']['order_comments']['label'] = '';
+        $fields['order']['order_comments']['placeholder'] = 'Additional information';
+        
+    }
+    return $fields;
+}
+
