@@ -84,3 +84,18 @@ function remove_billing_address_placeholder( $fields ) {
 }
 
 
+
+//Free shipping is applied automatically when the order amount exceeds the free shipping amount i set up in WC settings
+add_action('woocommerce_cart_calculate_fees', 'apply_free_shipping_based_on_order_amount');
+function apply_free_shipping_based_on_order_amount() {
+    $minimum_amount_for_free_shipping = floatval( get_option( 'woocommerce_free_shipping_minimum_amount' ) );
+
+    if ( WC()->cart->subtotal >= $minimum_amount_for_free_shipping ) {
+        //i am removing other shipping methods
+        $available_methods = WC()->shipping()->get_shipping_methods();
+        foreach ($available_methods as $method) {
+            unset($available_methods[$method->id]);
+        }
+
+    }
+}
