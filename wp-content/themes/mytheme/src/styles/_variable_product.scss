@@ -27,6 +27,58 @@ main{
             width: 480px;
             padding-left: 300px;
 
+            .product_title{
+                font-family: $primary-font;
+                font-weight: 400;
+                font-size: 42px;
+                line-height: 63px;
+            }
+            .price{
+                font-family: $strong-font;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 36px;
+                color: $gray-color;
+            }
+
+            .woocommerce-product-details__short-description{
+                font-family: $primary-font;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 19.5px;
+            }
+
+            .variations_form{
+                .single_variation_wrap{
+                    .woocommerce-variation-add-to-cart{
+                        display: flex;
+                        
+                        .quantity{
+                            padding-right: 30px;
+                            input{
+                                width: 123px;
+                                height: 64px;
+                                border-radius: 10px;
+                                background-color: transparent;
+                                border: 1px solid $gray-color;
+                            }
+                            
+                        }
+                        .single_add_to_cart_button{
+                            background-color: transparent;
+                            border: 1px solid #000000;
+                            width: 215px;
+                            height: 64px;
+                            border-radius: 15px;
+                            font-family: $primary-font;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 30px;
+                        }
+                    }
+                }
+            }
+
 
 
             .product_meta{

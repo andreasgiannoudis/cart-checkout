@@ -130,3 +130,14 @@ function woocommerce_shop_pagination( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'woocommerce_shop_pagination' );
+
+
+
+
+
+// HOOKS FOR PRODUCT PAGE
+
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 5 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+
+
