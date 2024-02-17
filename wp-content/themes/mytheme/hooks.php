@@ -120,3 +120,13 @@ function change_order_notes_placeholder($fields) {
     return $fields;
 }
 
+
+
+//Function for the pagination
+//set to 12 products per page
+function woocommerce_shop_pagination( $query ) {
+    if (is_post_type_archive( 'product' )) {
+        $query->set( 'posts_per_page', 12 ); //12 is the number of products per page
+    }
+}
+add_action( 'pre_get_posts', 'woocommerce_shop_pagination' );

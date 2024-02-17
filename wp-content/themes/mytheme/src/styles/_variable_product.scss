@@ -1,0 +1,38 @@
+main{
+    div.product-type-variable{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: calc(100% - 120px);
+        // justify-content: center;
+        margin: auto;
+
+        .woocommerce-product-gallery{
+            // 
+            .woocommerce-product-gallery__wrapper {
+                flex: 0 0 30%;
+                .woocommerce-product-gallery__image{
+                    width: 481px;
+                    img{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+    
+        }
+
+        .summary{
+            flex: 0 0 40%;
+            width: 480px;
+            padding-left: 300px;
+
+
+
+            .product_meta{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

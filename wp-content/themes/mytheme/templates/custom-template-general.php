@@ -5,7 +5,7 @@ Template Name: Custom General Template
 
 get_header();
 
-$hero_photo_url = 'http://cart-checkout.test/wp-content/uploads/2024/02/hero-photo-scaled.jpg';
+$hero_photo_url = 'https://cart-checkout.test/wp-content/uploads/2024/02/hero-photo-scaled.jpg';
 
 
 

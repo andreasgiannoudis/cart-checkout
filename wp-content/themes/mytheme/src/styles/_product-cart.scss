@@ -330,4 +330,19 @@
 
        
     }
+
+    .woocommerce-pagination{
+        margin-top: 20px;
+        text-align: center;
+        ul.page-numbers {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+
+            li {
+                display: inline-block;
+                margin: 0 5px;
+            }
+        }
+    }
 }
