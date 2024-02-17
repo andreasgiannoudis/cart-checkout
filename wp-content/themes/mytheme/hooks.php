@@ -85,20 +85,27 @@ function remove_billing_address_placeholder( $fields ) {
 
 
 
-//Free shipping is applied automatically when the order amount exceeds the free shipping amount i set up in WC settings
+//Free shipping is applied automatically when the order amount exceeds the free shipping amount that is set up in WC settings
 add_action('woocommerce_cart_calculate_fees', 'apply_free_shipping_based_on_order_amount');
 function apply_free_shipping_based_on_order_amount() {
-    $minimum_amount_for_free_shipping = floatval( get_option( 'woocommerce_free_shipping_minimum_amount' ) );
+    $free_shipping_settings = get_option('woocommerce_free_shipping_5_settings');
+    if (isset($free_shipping_settings['min_amount'])) {
+        $minimum_amount_for_free_shipping = floatval($free_shipping_settings['min_amount']);
 
-    if ( WC()->cart->subtotal >= $minimum_amount_for_free_shipping ) {
-        //i am removing other shipping methods
-        $available_methods = WC()->shipping()->get_shipping_methods();
-        foreach ($available_methods as $method) {
-            unset($available_methods[$method->id]);
+        if (WC()->cart->subtotal >= $minimum_amount_for_free_shipping) {
+            foreach (WC()->shipping()->get_shipping_methods() as $shipping_method_id => $shipping_method) {
+                if ($shipping_method_id !== 'free_shipping') {
+                    unset(WC()->session->chosen_shipping_methods[$shipping_method_id]);
+                    unset(WC()->session->chosen_shipping_methods);
+                    WC()->cart->calculate_shipping();
+                }
+            }
         }
-
     }
 }
+
+
+
 
 
 add_filter('woocommerce_checkout_fields', 'change_order_notes_placeholder');

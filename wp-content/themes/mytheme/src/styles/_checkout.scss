@@ -220,8 +220,19 @@
                         .wc_payment_methods{
                             border-bottom: none;
                             .wc_payment_method{
+                                input{
+                                    accent-color: #000000;
+                                    &:not(:checked) + .radio-circle {
+                                        border-color: #9F9F9F;    
+                                    }   
+                                    &:checked + label{
+                                        color: #000000;
+                                    }
+                                    
+                                }
+                                
                                 label{
-                                    color: #000000;
+                                    color: #9F9F9F;
                                     font-family: $primary-font;
                                     font-weight: 400;
                                     font-size: 16px;
