@@ -1,4 +1,35 @@
 .site-main{
+    .result-count-products{
+        background-color: $background-footer-box-color;
+        display: flex;
+        font-family: $primary-font;
+        .woocommerce-result-count{
+            margin-left: 10%;
+        }
+    }
+    .woocommerce-ordering{
+        display: flex;
+        margin-left: 70%;
+        margin-top: -50px;
+        p{
+            font-family: $primary-font;
+            margin-top: 10px;
+
+        }
+        .orderby{
+            margin-left: 10px;
+            margin-top: 7px;
+            width: 100px;
+            height: 30px;
+            border: none ;
+            option{
+                font-family: $primary-font;
+                
+
+            }
+        }
+
+    }
    
     
 
@@ -342,6 +373,23 @@
             li {
                 display: inline-block;
                 margin: 0 5px;
+                font-family: $primary-font;
+                margin: 10px;
+                span{
+                    color: black;
+                    text-decoration: none;
+                    background-color: #e9daab;
+                    padding: 5 15 5 15px;
+                    
+
+                }
+                a{
+                    color: black;
+                    text-decoration: none;
+                    background-color: $cart-second-color;
+                    padding: 5 15 5 15px;
+                }
+               
             }
         }
     }
