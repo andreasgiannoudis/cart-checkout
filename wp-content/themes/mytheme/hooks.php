@@ -141,3 +141,50 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_p
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 
 
+
+
+
+add_action('woocommerce_before_main_content', 'remove_woocommerce_breadcrumb');
+
+function remove_woocommerce_breadcrumb()
+{
+    //i am removing the breadcrumb only on the shop page
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+}
+
+
+//Custom bredcrumb
+add_action('woocommerce_before_main_content', 'custom_product_breadcrumb');
+function custom_product_breadcrumb() {
+    if (is_product()) {
+        echo '<div class="custom-breadcrumb">';
+        echo '<a href="' . home_url() . '">Home</a> <span class="separator"><img src="' . get_template_directory_uri() . '/src/images/separator.png" alt="Separator"></span> <a href="' . get_permalink(woocommerce_get_page_id('shop')) . '">Shop</a> <span class="separator"><img src="' . get_template_directory_uri() . '/src/images/separator.png" alt="Separator"></span> <span class="title-breadcrumb">' . get_the_title();  '</span>';
+        echo '</div>';
+    }
+}
+
+
+
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+//custom hook for star rating 
+function my_theme_stars_rating(){
+    global $product;
+    $rating_count = $product->get_rating_count();
+    $rating = $product->get_average_rating();
+    $width = ($rating / 5) * 100;
+
+    echo "<div class='rating'><div class='fill' style='width:" . $width . "%'></div></div>";
+
+}
+add_action('woocommerce_single_product_summary', 'my_theme_stars_rating', 5);
+
+
+
+
+//hook to change the default sorting to Default
+add_filter('woocommerce_catalog_orderby', 'change_default_sorting_text');
+
+function change_default_sorting_text($orderby_options) {
+    $orderby_options['menu_order'] = __('Default', 'woocommerce');
+    return $orderby_options;
+}

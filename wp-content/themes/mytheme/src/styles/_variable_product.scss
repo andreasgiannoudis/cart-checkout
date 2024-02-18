@@ -1,21 +1,70 @@
 main{
+    .custom-breadcrumb{
+        width: calc(100% - 180px);
+        margin: auto;
+        padding-top: 60px;
+        font-family: $primary-font;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        a{
+            color: $gray-color;
+            text-decoration: none;
+            
+        }
+        .separator{
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+        }
+        .title-breadcrumb{
+            border-left: 2px solid $gray-color;
+            padding-left: 10px;
+        }
+    }
+
     div.product-type-variable{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        width: calc(100% - 120px);
-        // justify-content: center;
+        width: calc(100% - 180px);
+        padding-top: 60px;
         margin: auto;
+
+        .rating{
+            height: 24px;
+            width: calc(24px * 5);
+            background-image: url("../images/star_unfilled.png");
+            background-size: auto 100%;
+            background-repeat: repeat-x;
+            .fill{
+                width: 0%;
+                height: 100%;
+                background-image: url("../images/star_filled.png");
+                background-size: auto 100%;
+                background-repeat: repeat-x;   
+            }
+        }
 
         .woocommerce-product-gallery{
             // 
             .woocommerce-product-gallery__wrapper {
                 flex: 0 0 30%;
                 .woocommerce-product-gallery__image{
+                    background-color: $background-color-products;
                     width: 481px;
+                    height: 500px;
+                    border-radius: 10px;
+                    background-size: cover; 
+                    background-position: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
                     img{
-                        width: 100%;
-                        height: auto;
+                        display: block;
+                        width: 481px;
+                        height: 391px;
                     }
                 }
             }
@@ -49,10 +98,11 @@ main{
             }
 
             .variations_form{
+                padding-bottom: 30px;
                 .single_variation_wrap{
                     .woocommerce-variation-add-to-cart{
                         display: flex;
-                        
+                        padding-top: 30px;
                         .quantity{
                             padding-right: 30px;
                             input{
@@ -84,6 +134,60 @@ main{
             .product_meta{
                 display: flex;
                 flex-direction: column;
+                border-top: 1px solid #D9D9D9;
+                padding-top: 30px;
+                color: $gray-color;
+                font-family: $primary-font;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                a{
+                    text-decoration: none;
+                    color: $gray-color;
+                }
+                
+            }
+
+
+            
+        }
+
+        .woocommerce-tabs{
+            padding-top: 90px;
+            .tabs{
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                li{
+                    margin-left: 60px;
+                    a{
+                        text-decoration: none;
+                        color: $gray-color;
+                        font-family: $primary-font;
+                        font-weight: 400;
+                        font-size: 24px;
+                        line-height: 36px;
+
+                        &:hover, &:focus{
+                            color: #000000;
+                        }
+                    }
+                }
+            }
+
+            .woocommerce-Tabs-panel{
+                color: $gray-color;
+                p{
+                    img{
+                        width: 48%;
+                        height: 60%;
+                        background-color: $background-color-products;
+                        
+                    }
+                    .alignright{
+                        margin-left: 30px;
+                    }
+                }
             }
         }
     }

@@ -22,9 +22,12 @@
             width: 100px;
             height: 30px;
             border: none ;
+            background-color: #FFF;
+            color: $gray-color;
+            padding-left: 10px;
             option{
                 font-family: $primary-font;
-                
+                color: $gray-color;
 
             }
         }
@@ -38,13 +41,13 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr); 
         gap: 20px; 
+        padding-top: 30px;
         .product{
             list-style: none;
             width: 33.3333%;
             a{
                 text-decoration: none;
-                font-family: $primary-font;
-                
+                font-family: $primary-font;    
                 color: $footer-second-text-color;
                 img{
 
@@ -375,12 +378,13 @@
                 margin: 0 5px;
                 font-family: $primary-font;
                 margin: 10px;
+                
                 span{
                     color: black;
                     text-decoration: none;
-                    background-color: #e9daab;
+                    background-color: $pagination-color;
                     padding: 5 15 5 15px;
-                    
+                    border-radius: 10px;
 
                 }
                 a{
@@ -388,6 +392,7 @@
                     text-decoration: none;
                     background-color: $cart-second-color;
                     padding: 5 15 5 15px;
+                    border-radius: 10px;
                 }
                
             }
