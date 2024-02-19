@@ -23,7 +23,8 @@ main{
         }
     }
 
-    div.product-type-variable{
+    div.product-type-variable,
+    div.product-type-simple{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -111,6 +112,7 @@ main{
                                 border-radius: 10px;
                                 background-color: transparent;
                                 border: 1px solid $gray-color;
+                                text-align: center;
                             }
                             
                         }
