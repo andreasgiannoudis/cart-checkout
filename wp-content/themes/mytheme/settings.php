@@ -8,10 +8,10 @@ if(!is_admin()) {
 function mytheme_add_settings() {
     add_submenu_page(
         "options-general.php",
-        "Butik",
-        "Butik",
+        "Store Settings",
+        "Store Settings",
         "edit_pages",
-        "butik",
+        "store",
         "mytheme_add_settings_callback"
     );
 }
@@ -20,11 +20,11 @@ function mytheme_add_settings_callback(){
     ?>
 
     <div class="wrap">
-        <h2>Store information</h2>
+        <h2>Company settings</h2>
         <form action="options.php" method="post">
             <?php
-            settings_fields('butik');
-            do_settings_sections('butik');
+            settings_fields('store');
+            do_settings_sections('store');
             submit_button();
             ?>
         </form>
@@ -35,45 +35,122 @@ function mytheme_add_settings_callback(){
 
 add_action('admin_menu', 'mytheme_add_settings');
 
-//registrerar inställningar tillgängliga på sidan "Butik"
 function mytheme_add_settings_init(){
     add_settings_section(
-        'butik_general',
+        'store_general',
         'General',
         'mytheme_add_settings_section_general',
-        'butik'
+        'store'
     );
 
-    //register store message
+
     register_setting(
-        'butik',
-        'store_message'
+        'store',
+        'company_mobile'
     );
-
     add_settings_field(
-        'store_message',
-        'Store Message',
+        'company_mobile',
+        'Mobile phone',
         'mytheme_section_general_setting',
-        'butik',
-        'butik_general',
+        'store',
+        'store_general',
         array(
-            "option_name" => "store_message",
+            "option_name" => "company_mobile",
             "option_type" => "text"
         )
     );
 
-   
+    register_setting(
+        'store',
+        'company_hotline'
+    );
+    add_settings_field(
+        'company_hotline',
+        'Hotline',
+        'mytheme_section_general_setting',
+        'store',
+        'store_general',
+        array(
+            "option_name" => "company_hotline",
+            "option_type" => "text"
+        )
+    );
+
+    register_setting(
+        'store',
+        'company_openHour_weekday'
+    );
+    add_settings_field(
+        'company_openHour_weekday',
+        'Weekday Open time',
+        'mytheme_section_general_setting',
+        'store',
+        'store_general',
+        array(
+            "option_name" => "company_openHour_weekday",
+            "option_type" => "time"
+        )
+    );
+
+    register_setting(
+        'store',
+        'company_closeHour_weekday'
+    );
+    add_settings_field(
+        'company_closeHour_weekday',
+        'Weekday Close time',
+        'mytheme_section_general_setting',
+        'store',
+        'store_general',
+        array(
+            "option_name" => "company_closeHour_weekday",
+            "option_type" => "time"
+        )
+    );
+
+
+    register_setting(
+        'store',
+        'company_openHour_weekend'
+    );
+    add_settings_field(
+        'company_openHour_weekend',
+        'Weekend Open time',
+        'mytheme_section_general_setting',
+        'store',
+        'store_general',
+        array(
+            "option_name" => "company_openHour_weekend",
+            "option_type" => "time"
+        )
+    );
+
+    register_setting(
+        'store',
+        'company_closeHour_weekend'
+    );
+    add_settings_field(
+        'company_closeHour_weekend',
+        'Weekend Close time',
+        'mytheme_section_general_setting',
+        'store',
+        'store_general',
+        array(
+            "option_name" => "company_closeHour_weekend",
+            "option_type" => "time"
+        )
+    );
+
+    
 }
 
 add_action('admin_init', 'mytheme_add_settings_init');
 
 
-//ritar ut inställningar på sidan "Butik"
 function mytheme_add_settings_section_general(){
-    echo"<p>Generella inställningar för butiken</p>";
+    echo"<p>General settings for your company</p>";
 }
 
-//ritar ut inställningsfältet för store_message
 function mytheme_section_general_setting($args){
     $option_name = $args["option_name"];
     $option_type = $args["option_type"];

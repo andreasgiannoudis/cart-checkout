@@ -189,3 +189,55 @@ function change_default_sorting_text($orderby_options) {
     $orderby_options['menu_order'] = __('Default', 'woocommerce');
     return $orderby_options;
 }
+
+//I am adding the Share on product meta and i add the 3 share icons
+add_action('woocommerce_product_meta_end', 'custom_product_meta_content');
+function custom_product_meta_content() {
+    $theme_directory = get_template_directory_uri();
+    echo '<span class="share-product">Share: ';
+    echo '<a href="https://www.facebook.com" target="_blank"><img src="' . $theme_directory . '/src/images/facebook.png" alt="Facebook"></a>';
+    echo '<a href="https://www.linkedin.com" target="_blank"><img src="' . $theme_directory . '/src/images/linkedin.png" alt="LinkedIn"></a>';
+    echo '<a href="https://twitter.com" target="_blank"><img src="' . $theme_directory . '/src/images/twitter.png" alt="Twitter"></a>';
+    echo '</span>';
+}
+
+
+
+// ------------------------------------------------------------------------
+//ADDING THE + AND - IN THE INPUT FOR QUANTITY
+add_action( 'wp_footer', 'ts_quantity_plus_minus' );
+function ts_quantity_plus_minus() {
+    if ( ! is_product() ) return;
+    ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function($){   
+            $('form.cart').on('click', 'button.plus, button.minus', function() {
+                let qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+                let val   = parseFloat(qty.val());
+                let max = parseFloat(qty.attr( 'max' ));
+                let min = parseFloat(qty.attr( 'min' ));
+                let step = parseFloat(qty.attr( 'step' ));
+                
+                if ( $( this ).is( '.plus' ) ) {
+                    if ( max && ( max <= val ) ) {
+                        qty.val( max );
+                    } else {
+                        qty.val( val + step );
+                    }
+                } else {
+                    if ( min && ( min >= val ) ) {
+                        qty.val( min );
+                    } else if ( val > 1 ) {
+                        qty.val( val - step );
+                    }
+                }
+                
+            });
+            
+            // Modify the quantity input field to include plus and minus buttons
+            $('form.cart .quantity').prepend('<button type="button" class="minus" >-</button>');
+            $('form.cart .quantity').append('<button type="button" class="plus" >+</button>');
+        });
+    </script>
+    <?php
+}

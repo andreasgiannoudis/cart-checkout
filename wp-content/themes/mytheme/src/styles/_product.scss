@@ -38,6 +38,7 @@ main{
             background-image: url("../images/star_unfilled.png");
             background-size: auto 100%;
             background-repeat: repeat-x;
+            margin-top: -15px;
             .fill{
                 width: 0%;
                 height: 100%;
@@ -89,6 +90,7 @@ main{
                 font-size: 24px;
                 line-height: 36px;
                 color: $gray-color;
+                margin-top: -25px;
             }
 
             .woocommerce-product-details__short-description{
@@ -98,9 +100,117 @@ main{
                 line-height: 19.5px;
             }
 
-            .variations_form{
+
+            .cart{
+                display: flex;
+
+                .quantity{
+                    padding-right: 30px;
+                    position: relative;
+                    input{
+                        width: 123px;
+                        height: 64px;
+                        border-radius: 10px;
+                        background-color: transparent;
+                        border: 1px solid $gray-color;
+                        text-align: center;
+
+                        -webkit-appearance: none;
+                        -moz-appearance: textfield;
+
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button{
+                            -webkit-appearance: none; 
+                            margin: 0;
+                        }
+
+                    }
+
+                    button {
+                        position: absolute;
+                        top: 0;
+                        width: 30px;
+                        height: 100%;
+                        border: none;
+                        background-color: transparent;
+                        cursor: pointer;
+                        font-family: $primary-font;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 24px;
+
+                        .minus {
+                            left: 0;
+                        }
+
+                        
+                    }
+                    .plus{
+                        right: 30;
+                    }
+                    
+                }
+
+                .single_add_to_cart_button{
+                    background-color: transparent;
+                    border: 1px solid #000000;
+                    width: 215px;
+                    height: 64px;
+                    border-radius: 15px;
+                    font-family: $primary-font;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+
+            }
+
+            #form.variations_form{
                 padding-bottom: 30px;
+                margin-top: -30px;
+                display: block;
+                .variations{
+                    tbody{
+                        tr{
+                            .value{
+                                .attribute-options{
+                                    padding-bottom: 15px;
+                                    padding-top: 15px;
+                                    .select-values{
+                                        color: $gray-color;
+
+                                    }
+                                    .select-values-div{
+                                        padding-bottom: 15px;
+                                        .select-values{
+                                            color: $gray-color;
+                                        }
+
+                                    }
+                                    .attribute-option{
+                                        width: 30px;
+                                        height: 30px;
+                                        margin-right: 15px;
+                                        background-color: #FAF4F4;
+                                        border: none;
+                                        border-radius: 5px;
+                                        &:hover{
+                                            background-color: $pagination-color;
+                                        }
+                                    }
+                                    .color-values{
+                                        border-radius: 50%;
+                                        border: none;
+                                        margin-right: 15px;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 .single_variation_wrap{
+                    margin-top: -30px;
                     .woocommerce-variation-add-to-cart{
                         display: flex;
                         padding-top: 30px;
@@ -131,8 +241,7 @@ main{
                 }
             }
 
-
-
+            
             .product_meta{
                 display: flex;
                 flex-direction: column;
@@ -146,6 +255,17 @@ main{
                 a{
                     text-decoration: none;
                     color: $gray-color;
+                }
+                .share-product{
+                    a{
+                        padding-left: 20px;
+                    }
+                }
+                .sku_wrapper,
+                .posted_in,
+                .tagged_as,
+                .share-product{
+                    padding-bottom: 10px;
                 }
                 
             }
