@@ -1,34 +1,6 @@
 <footer>
     <div class="footer-wrapper"></div>
-    <div class="footer-box">
-        <div class="footer-box1">
-            <div class="footer-box1-text">
-                <h3>Free Delivery</h3>
-                <p>For all oders over $50, consectetur adipim scing elit.</p>
-
-            </div>
-
-
-        </div>
-        <div class="footer-box2">
-            <div class="footer-box2-text">
-                <h3>90 Days Return</h3>
-                <p>If goods have problems, consectetur adipim scing elit.</p>
-
-            </div>
-
-
-        </div>
-        <div class="footer-box3">
-            <div class="footer-box3-text">
-                <h3>Secure Payment</h3>
-                <p>100% secure payment, consectetur adipim scing elit.</p>
-
-            </div>
-
-
-        </div>
-    </div>
+    
     <div class="footer-container">
         <div class="footer-left">
             <div class="store-info">
