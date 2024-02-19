@@ -1,0 +1,308 @@
+header{
+    .column-50{
+        z-index: 12;
+    }
+    z-index: 1;
+}
+.content{
+    .homepage-group1{
+        .wp-block-group__inner-container{
+            background-color: $pagination-color;
+            margin-top: -100px;
+            .frontpage-row1{
+                .frontpage-stack1{
+                    margin-top: 50px;
+                    width: 50%;
+                    display: flex;
+                    
+                    .frontpage-text1{
+                        margin-left: 30%;
+                        font-family: Poppins;
+                        font-size: 64px;
+                        font-weight: 500;
+                        line-height: 96px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        width: 400px;
+
+
+                    }
+                    .frontpage-button1{
+                        margin-left: 30%;
+                        background-color: transparent;
+                        border-top: none;
+                        border-right: none;
+                        border-left: none;
+                        border-bottom: 2px solid black; 
+                        padding: 0;
+                        transition: transform 0.3s ease;
+                        .wp-block-button{
+                            
+                            a{
+                            font-family: Poppins;
+                            font-size: 24px;
+                            font-weight: 500;
+                            line-height: 36px;
+                            letter-spacing: 0em;
+                            text-align: left;
+                            border: none;
+                            padding: 0;
+                            }
+                           
+                            
+                            
+                            
+                            
+                            
+                            
+
+                        
+
+                        }
+                        &:hover{
+                            background-color:transparent;
+                            color: $price-color;
+                            transform: scale(1.1) translate(0px, -3px);
+                            
+                            
+                        }
+
+                    }
+                }
+                .frontpage-image1{
+                    margin-left: -190px;
+                    img{
+
+                    }
+                }
+
+            }
+        }
+    }
+    
+}
+.row2{
+    background-color: $background-footer-box-color;
+    
+
+   
+    .stack2-1{
+        width: 50%;
+        margin-bottom: 100px;
+        .wp-block-image{
+            margin-left: 150px;
+            img{
+                width: 500px;
+                margin-top: -100px;
+
+            }
+            
+        }
+        .stack-text1{
+            margin-left: 200px;
+            margin-top: -0px;
+           
+            p{
+
+            }
+            .wp-block-buttons{
+                background-color: transparent;
+                border-top: none;
+                border-right: none;
+                border-left: none;
+                border-bottom: 2px solid black; 
+                padding: 0;
+                transition: transform 0.3s ease;
+                
+                
+                .wp-block-button{
+                    margin-bottom: 5px;
+                   
+                    
+                 a{
+                    font-family: Poppins;
+                    font-size: 24px;
+                    font-weight: 500;
+                    line-height: 36px;
+                    letter-spacing: 0em;
+                    text-align: left;
+                    border: none;
+                    padding: 0;
+                    
+
+                 }   
+                }
+                &:hover{
+                    background-color:transparent;
+                    color: $price-color;
+                    transform: scale(1.1) translate(0px, -3px);
+                    
+                    
+                }
+
+            }
+
+        }
+        
+        
+
+    }
+    .stack2-2{
+        margin-bottom: 100px;
+        .wp-block-image{
+            img{
+              
+
+            }
+            
+        }
+        img{
+            width: 500px;
+            margin-top: -50px;
+
+        }
+
+
+        
+        
+        
+    }
+    .stack-text2{
+        margin-top: -50px;
+        p{
+
+        }
+        .wp-block-buttons{
+            background-color: transparent;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 2px solid black; 
+            padding: 0;
+            transition: transform 0.3s ease;
+            .wp-block-button{
+                margin-bottom: 5px;
+             a{
+                font-family: Poppins;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 36px;
+                letter-spacing: 0em;
+                text-align: left;
+                border: none;
+                padding: 0;
+                
+               
+             } 
+             
+                
+                
+            }  
+
+            &:hover{
+                background-color:transparent;
+                color: $price-color;
+                transform: scale(1.1) translate(0px, -3px);
+            }
+
+        }
+
+    }
+    p{
+        font-family: Poppins;
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 54px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+}
+.homepage-group3{
+    background-color: $background-color-products;
+    height: auto ;
+    .wp-block-group__inner-container{
+        .frontpage-row1{
+            
+            .wp-block-image {
+                margin-top: -90px;
+                margin-bottom: -70px;
+                width: auto;
+
+            
+                img{
+
+                    width:900px;
+                    margin-left: 50px;
+
+
+                }
+            }
+
+
+        }
+        .wp-block-group{
+            margin-left:10px ;
+            
+            .frontpage-text1{
+                margin-top: -50px;
+                margin-left: 100px;
+                font-family: Poppins;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 36px;
+                letter-spacing: 0em;
+                text-align: left;
+
+
+            }
+            .frontpage-text1-2{
+                
+                margin-left: 100px;
+                font-family: Poppins;
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 72px;
+                letter-spacing: 0em;
+                text-align: left;
+
+
+            }
+
+            .wp-block-buttons{
+                margin-left: 100px;
+                background-color: transparent;
+                border: 1px solid black ; 
+                padding: 10 45 10 45px ;
+                transition: transform 0.3s ease;
+                
+                
+                .wp-block-button{
+                    
+                    a{
+                        font-family: Poppins;
+                        font-size: 24px;
+                        font-weight: 500;
+                        line-height: 36px;
+                        letter-spacing: 0em;
+                        text-align: left;
+                        border: none;
+                        padding: 0;
+    
+                    }
+                }
+                &:hover{
+                    background-color:transparent;
+                    color: $price-color;
+                    transform: scale(1.1) translate(0px, -3px);
+                    
+                    
+                }
+            }
+
+        }
+
+    }
+
+}
