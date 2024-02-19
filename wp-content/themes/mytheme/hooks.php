@@ -137,6 +137,7 @@ add_action( 'pre_get_posts', 'woocommerce_shop_pagination' );
 
 // HOOKS FOR PRODUCT PAGE
 //i am trying to change the order of price and rating by changing the priorities
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price');
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 5 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 
