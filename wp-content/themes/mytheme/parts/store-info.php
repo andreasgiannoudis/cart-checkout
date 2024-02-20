@@ -6,16 +6,16 @@ function mytheme_store_info($atts) {
     $output = '
         <div class="store-info-contact">
             <p class="store-address">Address</p>
-            ' .get_option('woocommerce_store_address') . '<br>' .
+            ' .get_option('woocommerce_store_address') . ', ' .
             get_option('woocommerce_store_city') . ',<br>' . 
-            get_option('woocommerce_store_postcode') . ' ' . 
+            get_option('woocommerce_store_postcode') . ', ' . 
             get_option('woocommerce_default_country') . '
         </div>
 
         <div class="store-info-phone">
             <p class="store-phone">Phone</p>
-            <span class="store-mobile"> ' . get_option('company_mobile') . '</span>
-            <span class="store-hotline">' . get_option('company_hotline') . '</span>
+            <p class="store-mobile"> Mobile: ' . get_option('company_mobile') . '</p>
+            <p class="store-hotline">Hotline: ' . get_option('company_hotline') . '</p>
             
         </div>
 
@@ -29,4 +29,3 @@ function mytheme_store_info($atts) {
 
     return $output;
 }
-?>

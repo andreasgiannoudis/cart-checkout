@@ -1,0 +1,52 @@
+{
+  "resources/fonts/Poppins-Bold.ttf": {
+    "file": "assets/Poppins-Bold.ttf",
+    "src": "resources/fonts/Poppins-Bold.ttf"
+  },
+  "resources/fonts/Poppins-Light.ttf": {
+    "file": "assets/Poppins-Light.ttf",
+    "src": "resources/fonts/Poppins-Light.ttf"
+  },
+  "resources/fonts/Poppins-Medium.ttf": {
+    "file": "assets/Poppins-Medium.ttf",
+    "src": "resources/fonts/Poppins-Medium.ttf"
+  },
+  "resources/fonts/Poppins-Regular.ttf": {
+    "file": "assets/Poppins-Regular.ttf",
+    "src": "resources/fonts/Poppins-Regular.ttf"
+  },
+  "resources/fonts/Poppins-SemiBold.ttf": {
+    "file": "assets/Poppins-SemiBold.ttf",
+    "src": "resources/fonts/Poppins-SemiBold.ttf"
+  },
+  "resources/images/love.png": {
+    "file": "assets/love.png",
+    "src": "resources/images/love.png"
+  },
+  "resources/images/search.png": {
+    "file": "assets/search.png",
+    "src": "resources/images/search.png"
+  },
+  "resources/images/shopping-cart.png": {
+    "file": "assets/shopping-cart.png",
+    "src": "resources/images/shopping-cart.png"
+  },
+  "resources/images/star_filled.png": {
+    "file": "assets/star_filled.png",
+    "src": "resources/images/star_filled.png"
+  },
+  "resources/images/user.png": {
+    "file": "assets/user.png",
+    "src": "resources/images/user.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/scss/app.scss": {
+    "file": "assets/app.css",
+    "isEntry": true,
+    "src": "resources/scss/app.scss"
+  }
+}

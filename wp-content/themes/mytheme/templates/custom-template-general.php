@@ -22,7 +22,7 @@ $hero_photo_url = 'https://cart-checkout.test/wp-content/uploads/2024/02/hero-ph
         <!-- OVERLAY -->
         <div class="overlay"></div>
 
-        <img src="<?php echo get_template_directory_uri(); ?>/src/images/logo.png" alt="logo" class="logo-custom">
+        <img src="<?php echo get_template_directory_uri(); ?>/resources/images/logo.png" alt="logo" class="logo-custom">
         <!-- TITLE -->
         <h1 class="page-title"><?php the_title(); ?></h1>
 

@@ -1,0 +1,91 @@
+.page-content{
+    .get-in-touch-group{
+        width: 650px;
+        margin: auto;
+        padding-top: 50px;
+        .get-in-touch{
+            font-family: $semibold-font;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 54px;
+            text-align: center;
+        }
+        .more-info{
+            color: $gray-color;
+            font-family: $primary-font;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+        }
+    }
+
+    .info-and-form{
+        width: calc(100% - 300px);
+        margin: auto;
+
+        .col-info-and-form{
+            padding: 60px;
+        }
+       
+            .store-address,
+            .store-phone,
+            .store-opening-hours{
+                font-family: $strong-font;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 36px;
+            }
+
+        .store-info-contact,
+        .store-info-phone,
+        .store-info-openhours{
+            font-family: $primary-font;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            padding-top: 15px;
+        }
+        
+
+        .contact-form-column{
+            .contact-us-form{
+                display: flex;
+                flex-direction: column;
+
+                label{
+                    margin-top: 20px;
+                    font-family: $strong-font;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+
+                }
+
+                input,
+                textarea{
+                    width: 528.75px;
+                    height: 75px;
+                    border-radius: 10px;
+                    border: 1px solid $gray-color;
+                    margin-top: 10px;
+                    padding: 20px;
+                }
+
+                .send-mail-btn{
+                    font-family: $primary-font;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 24px;
+                    background-color: transparent;
+                    border-radius: 15px;
+                    border: 1px solid #000000;
+                    width: 237px;
+                    height: 48px;
+                    margin-top: 30px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

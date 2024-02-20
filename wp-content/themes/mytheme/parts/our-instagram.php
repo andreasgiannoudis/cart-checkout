@@ -23,7 +23,7 @@ function mytheme_our_instagram_custom_section($atts) {
             <div class="custom-cta-content">
                 <p class="our-instagram-text">' . esc_html($atts['text1']) . '</p>
                 <p class="follow-our-store">' . esc_html($atts['text2']) . '</p>
-                <button class="custom-cta-button" onclick="window.location.href=\'' . esc_url($atts['link']) . '\';">' . esc_html($atts['button']) . '</button>                </div>
+                <button class="follow-us-btn" onclick="window.location.href=\'' . esc_url($atts['link']) . '\';">' . esc_html($atts['button']) . '</button>                </div>
         </div>
     ';
 

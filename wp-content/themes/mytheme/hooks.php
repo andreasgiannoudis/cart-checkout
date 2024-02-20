@@ -4,7 +4,7 @@
 //i am changing the breadcrumb separator to a custom vector icon
 add_filter('woocommerce_breadcrumb_defaults', 'custom_wc_breadcrumb_defaults');
 function custom_wc_breadcrumb_defaults($defaults) {
-    $defaults['delimiter'] = ' <span class="separator"><img src="' . get_template_directory_uri() . '/src/images/separator.png" alt="Separator"></span> ';
+    $defaults['delimiter'] = ' <span class="separator"><img src="' . get_template_directory_uri() . '/resources/images/separator.png" alt="Separator"></span> ';
     return $defaults;
 }
 
@@ -159,7 +159,7 @@ add_action('woocommerce_before_main_content', 'custom_product_breadcrumb');
 function custom_product_breadcrumb() {
     if (is_product()) {
         echo '<div class="custom-breadcrumb">';
-        echo '<a href="' . home_url() . '">Home</a> <span class="separator"><img src="' . get_template_directory_uri() . '/src/images/separator.png" alt="Separator"></span> <a href="' . get_permalink(woocommerce_get_page_id('shop')) . '">Shop</a> <span class="separator"><img src="' . get_template_directory_uri() . '/src/images/separator.png" alt="Separator"></span> <span class="title-breadcrumb">' . get_the_title();  '</span>';
+        echo '<a href="' . home_url() . '">Home</a> <span class="separator"><img src="' . get_template_directory_uri() . '/resources/images/separator.png" alt="Separator"></span> <a href="' . get_permalink(woocommerce_get_page_id('shop')) . '">Shop</a> <span class="separator"><img src="' . get_template_directory_uri() . '/resources/images/separator.png" alt="Separator"></span> <span class="title-breadcrumb">' . get_the_title();  '</span>';
         echo '</div>';
     }
 }
@@ -195,9 +195,9 @@ add_action('woocommerce_product_meta_end', 'custom_product_meta_content');
 function custom_product_meta_content() {
     $theme_directory = get_template_directory_uri();
     echo '<span class="share-product">Share: ';
-    echo '<a href="https://www.facebook.com" target="_blank"><img src="' . $theme_directory . '/src/images/facebook.png" alt="Facebook"></a>';
-    echo '<a href="https://www.linkedin.com" target="_blank"><img src="' . $theme_directory . '/src/images/linkedin.png" alt="LinkedIn"></a>';
-    echo '<a href="https://twitter.com" target="_blank"><img src="' . $theme_directory . '/src/images/twitter.png" alt="Twitter"></a>';
+    echo '<a href="https://www.facebook.com" target="_blank"><img src="' . $theme_directory . '/resources/images/facebook.png" alt="Facebook"></a>';
+    echo '<a href="https://www.linkedin.com" target="_blank"><img src="' . $theme_directory . '/resources/images/linkedin.png" alt="LinkedIn"></a>';
+    echo '<a href="https://twitter.com" target="_blank"><img src="' . $theme_directory . '/resources/images/twitter.png" alt="Twitter"></a>';
     echo '</span>';
 }
 

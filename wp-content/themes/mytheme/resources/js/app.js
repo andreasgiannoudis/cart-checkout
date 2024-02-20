@@ -1,4 +1,4 @@
-//import "./ajax-add-to-cart";
+import "./ajax-add-to-cart";
 
 jQuery(document).ready(function($) {
     //i am changing label for the billing postcode field

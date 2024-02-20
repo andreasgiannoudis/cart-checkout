@@ -79,6 +79,66 @@ header{
             }
         }
     }
+
+    .our-instagram-div {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        text-align: center;
+        overflow: hidden;
+    
+        .custom-cta-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+    
+        .custom-cta-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+    
+            .our-instagram-text {
+                font-family: $bold-font;
+                font-weight: 700;
+                font-size: 60px;
+                line-height: 90px;
+            }
+    
+            .follow-our-store {
+                font-family: $primary-font;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                margin-top: -50px;
+            }
+
+            .follow-us-btn{
+                width: 255px;
+                height: 64px;
+                background-color: #FAF4F4;
+                border-radius: 50px;
+                border: none;
+                font-family: $primary-font;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 30px;
+                cursor: pointer;
+                transition: border 0.3s ease-in-out;
+                &:hover{
+                    border: 1px solid #000000;
+                }
+            }
+    
+           
+        }
+    }
+    
     
 }
 .row2{
