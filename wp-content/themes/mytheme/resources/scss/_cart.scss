@@ -64,7 +64,9 @@
                                 padding-right: 5px;
                                 border-radius: 5px;
                                 border: 1px solid $footer-second-text-color;
-
+                                width: 32px;
+                                height: 32px;
+                                -moz-appearance: textfield;
                             }
                             input{
                                 padding-left: 5px;

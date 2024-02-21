@@ -8,3 +8,9 @@ jQuery(document).ready(function($) {
 });
 
 
+jQuery(document).ready(function($) {
+    //find the element containing the label and replace its text
+    $('.up-sells').find('h2').text('Related Products');
+});
+
+

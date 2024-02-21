@@ -27,43 +27,94 @@ function single_product_ajax_add_to_cart_js_script() {
     ?>
     <script>
     (function($) {
-        $('form.cart').on('submit', function(e) {
-            e.preventDefault();
 
-            var form   = $(this),
-                mainId = form.find('.single_add_to_cart_button').val(),
-                fData  = form.serializeArray();
+    $('form.cart .single_add_to_cart_button').on('click', function(e) {
+        e.preventDefault();
 
-            form.block({ message: null, overlayCSS: { background: '#fff', opacity: 0.6 } });
+        var button = $(this);
+        var form = button.closest('form.cart');
+        var mainId = button.val();
 
-            if ( mainId === '' ) {
-                mainId = form.find('input[name="product_id"]').val();
-            }
+        form.block({ message: null, overlayCSS: { background: '#fff', opacity: 0.6 } });
 
-            if ( typeof wc_add_to_cart_params === 'undefined' )
-                return false;
-
-            $.ajax({
-                type: 'POST',
-                url: wc_add_to_cart_params.wc_ajax_url.toString().replace( '%%endpoint%%', 'custom_add_to_cart' ),
-                data : {
-                    'product_id': mainId,
-                    'form_data' : fData
-                },
-                success: function (response) {
-                    $(document.body).trigger("wc_fragment_refresh");
-                    $('.woocommerce-error,.woocommerce-message').remove();
-                    $('input[name="quantity"]').val(1);
-                    $('.content-area').before(response);
-                    form.unblock();
-
-                },
-                error: function (error) {
-                    form.unblock();
-                }
-            });
+        var fData = form.serializeArray();
+        form.find('.attribute-options button').each(function() {
+            var attribute = $(this).closest('td').prev('td').find('.select-values').text().trim().replace(':', '');
+            var value = $(this).data('value');
+            fData.push({ name: 'attribute_' + attribute, value: value });
         });
-    })(jQuery);
+
+        var selectedVariation = form.data('product_variations');
+        var variation_id = 0;
+        if (typeof selectedVariation === 'string' && selectedVariation.trim() !== '') {
+            try {
+                selectedVariation = JSON.parse(selectedVariation);
+                var attributes = {};
+                form.find('.attribute-options button').each(function() {
+                    var attribute_name = $(this).closest('td').prev('td').find('.select-values').text().trim().replace(':', '');
+                    var attribute_value = $(this).data('value');
+                    attributes[attribute_name] = attribute_value;
+                });
+                selectedVariation.forEach(function(variation) {
+                    var isMatch = true;
+                    for (var attribute_name in attributes) {
+                        if (attributes[attribute_name] != variation.attributes[attribute_name]) {
+                            isMatch = false;
+                            break;
+                        }
+                    }
+                    if (isMatch) {
+                        variation_id = variation.variation_id;
+                        return false;
+                    }
+                });
+            } catch (error) {
+                console.error('Error parsing JSON data:', error);
+                return; 
+            }
+        }
+
+        fData.push({ name: 'variation_id', value: variation_id });
+
+        if (mainId === '') {
+            mainId = form.find('input[name="product_id"]').val();
+        }
+
+        if (typeof wc_add_to_cart_params === 'undefined')
+            return false;
+
+        $.ajax({
+            type: 'POST',
+            url: wc_add_to_cart_params.wc_ajax_url.toString().replace('%%endpoint%%', 'custom_add_to_cart'),
+            data: {
+                'product_id': mainId,
+                'form_data': fData
+            },
+            success: function(response) {
+                $(document.body).trigger("wc_fragment_refresh");
+                $('.woocommerce-error,.woocommerce-message').remove();
+                $('input[name="quantity"]').val(1);
+                $('.content-area').before(response);
+                form.unblock();
+            },
+            error: function(error) {
+                form.unblock();
+            }
+        });
+    });
+
+    $('.attribute-options button').on('click', function(e) {
+        e.preventDefault();
+        $('.attribute-options button').removeClass('selected');
+        $(this).addClass('selected');
+    });   
+})(jQuery);
+
+
+
+
+
+
     </script>
     <?php
 }
@@ -77,17 +128,24 @@ function custom_add_to_cart_handler() {
         $variation = $cart_item_data = $custom_data = array();
         $variation_id = 0;
 
-        foreach( $_POST['form_data'] as $values ) {
-            if ( strpos( $values['name'], 'attributes_' ) !== false ) {
+        foreach ($_POST['form_data'] as $values) {
+            if (strpos($values['name'], 'attribute_pa') !== false) {
                 $variation[$values['name']] = $values['value'];
-            } elseif ( $values['name'] === 'quantity' ) {
+            } elseif ($values['name'] === 'quantity') {
                 $quantity = $values['value'];
-            } elseif ( $values['name'] === 'variation_id' ) {
+            } elseif ($values['name'] === 'variation_id') {
                 $variation_id = $values['value'];
-            } elseif ( $values['name'] !== 'add_to_cart' ) {
+            } elseif ($values['name'] !== 'add_to_cart') {
                 $custom_data[$values['name']] = esc_attr($values['value']);
             }
         }
+        
+
+        // echo 'Product ID: ' . $product_id;
+        // echo '<br>Variation ID: ' . $variation_id;
+        // echo '<br>Quantity: ' . $quantity;
+        // echo '<br>Variation Data: ' . print_r($variation, true);
+        // echo '<br>Custom Data: ' . print_r($custom_data, true);
 
         $product = wc_get_product( $variation_id ? $variation_id : $product_id );
 

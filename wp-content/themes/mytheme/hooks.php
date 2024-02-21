@@ -234,10 +234,37 @@ function ts_quantity_plus_minus() {
                 
             });
             
-            // Modify the quantity input field to include plus and minus buttons
             $('form.cart .quantity').prepend('<button type="button" class="minus" >-</button>');
             $('form.cart .quantity').append('<button type="button" class="plus" >+</button>');
         });
     </script>
+    <?php
+}
+
+
+
+add_filter( 'woocommerce_product_reviews_tab_title', 'custom_reviews_tab_title', 10, 2 );
+function custom_reviews_tab_title( $title ) {
+    global $product;
+    
+    $review_count = $product->get_review_count();
+    $title = sprintf( __( 'Reviews[%d]', 'woocommerce' ), $review_count );
+    
+    return $title;
+}
+
+
+//To remove the rating from the shop page in every product card
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+
+
+//i am adding a view more button after the related products
+add_action('woocommerce_after_single_product', 'add_view_more_button_after_related_products');
+function add_view_more_button_after_related_products() {
+    ?>
+    <div class="view-more-related-products">
+        <a href="<?php echo esc_url(get_permalink(wc_get_page_id('shop'))); ?>" class="view-more-button"><?php esc_html_e('View More', 'mytheme'); ?></a>
+    </div>
     <?php
 }
