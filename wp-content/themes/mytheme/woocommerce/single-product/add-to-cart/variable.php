@@ -27,7 +27,7 @@ $variations_attr = function_exists('wc_esc_json') ? wc_esc_json($variations_json
 
 do_action('woocommerce_before_add_to_cart_form'); ?>
 
-<form id="form" class="variations_form cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint($product->get_id()); ?>">    <?php do_action('woocommerce_before_variations_form'); ?>
+<form id="form" class="variations_form cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data' data-product_id="<?php echo absint($product->get_id()); ?>" data-product_variations="<?php echo esc_attr(json_encode($product->get_available_variations())); ?>">
 
     <?php if (empty($available_variations) && false !== $available_variations) : ?>
         <p class="stock out-of-stock"><?php echo esc_html(apply_filters('woocommerce_out_of_stock_message', __('This product is currently out of stock and unavailable.', 'woocommerce'))); ?></p>
@@ -68,9 +68,10 @@ do_action('woocommerce_before_add_to_cart_form'); ?>
                                             }
                                             ?>
                                             <button class="attribute-option color-values" data-value="<?php echo esc_attr($option); ?>" style="background: <?php echo esc_attr($color); ?>;"></button>
-                                            <input type="hidden" name="attribute_pa_color" value="">
+											<input type="hidden" name="attribute_pa_color" value="">
                                         <?php endforeach; ?>
                                     </div>
+									<div id="confirmation-message"></div>
 
                                 <?php endif; ?>
                             </div>

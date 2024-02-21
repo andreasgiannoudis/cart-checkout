@@ -44,7 +44,7 @@ $shop_page_title = 'Shop';
         <!-- OVERLAY -->
         <div class="overlay"></div>
 
-        <img src="<?php echo get_template_directory_uri(); ?>/src/images/logo.png" alt="logo" class="logo-custom">
+        <img src="<?php echo get_template_directory_uri(); ?>/resources/images/logo.png" alt="logo" class="logo-custom">
         <!-- TITLE -->
         <h1 class="page-title"><?php echo esc_html($shop_page_title); ?></h1>
 
