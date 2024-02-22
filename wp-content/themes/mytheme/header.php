@@ -2,6 +2,7 @@
     <head>
         <title><?= get_option("blogname");?></title>
         <?php wp_head();?>
+        <script src="https://kit.fontawesome.com/c00b9243bd.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <?php wp_body_open();?>
@@ -12,6 +13,8 @@
             <?php endif; ?>
         <header>
             <div class="column-50">
+                
+                
 
             </div>
             <div class="column-50">

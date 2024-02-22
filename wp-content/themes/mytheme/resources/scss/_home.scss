@@ -304,13 +304,14 @@ header{
         }
         .wp-block-group{
             margin-left:10px ;
+            font-family: $bold-font;
             
             .frontpage-text1{
                 margin-top: -50px;
                 margin-left: 100px;
-                font-family: Poppins;
+                font-family:$bold-font;
                 font-size: 24px;
-                font-weight: 500;
+                font-weight: 700;
                 line-height: 36px;
                 letter-spacing: 0em;
                 text-align: left;
